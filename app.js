@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const config = require("config");
+const path = require("path");
 const cors = require("cors");
 const expressValidator = require("express-validator");
 
@@ -38,6 +39,15 @@ app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
+
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 //port
 const port = process.env.PORT || 8000;
