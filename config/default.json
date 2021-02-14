@@ -1,5 +1,5 @@
 {
   "db": "mongodb+srv://admin:admin@ecommerce.xoqjn.mongodb.net/ecommerce?retryWrites=true&w=majority",
-  "port": "8000",
+  "port": "4000",
   "JWT_SECRET": "This_is_default_key"
 }
