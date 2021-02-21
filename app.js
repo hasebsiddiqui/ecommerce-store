@@ -39,7 +39,6 @@ app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
-app.use("/", productRoutes);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 
