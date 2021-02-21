@@ -12,6 +12,7 @@ import AddProduct from "./admin/AddProduct";
 import Product from "./core/Product";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+import Error404 from "./Error404";
 
 const Routes = () => {
   return (
@@ -32,6 +33,7 @@ const Routes = () => {
         />
         <AdminRoute path="/admin/products" exact component={ManageProducts} />
         <Route path="/product/:productId" exact component={Product}></Route>
+        <Route component={Error404}></Route>
       </Switch>
     </BrowserRouter>
   );
